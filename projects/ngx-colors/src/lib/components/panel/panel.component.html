@@ -85,6 +85,14 @@
           </div>
         </div>
       </ng-container>
+      <div class="button-block">
+        <button (click)="emitClose('cancel')" style="float: right">
+          {{ cancelLabel }}
+        </button>
+        <button (click)="emitClose('accept')" style="float: left">
+          {{ acceptLabel }}
+        </button>
+      </div>
     </div>
   </ng-container>
   <ng-container *ngIf="menu == 3">

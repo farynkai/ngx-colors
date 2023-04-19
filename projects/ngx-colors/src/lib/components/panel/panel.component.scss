@@ -26,6 +26,10 @@ $radius: 5px;
   border-radius: $radius;
   position: absolute;
 
+  .button-block {
+    margin: 0 auto;
+  }
+
   button {
     border: none;
     font-family: inherit;

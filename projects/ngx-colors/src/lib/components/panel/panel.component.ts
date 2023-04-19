@@ -324,7 +324,7 @@ export class PanelComponent implements OnInit {
   public changeColor(color: string): void {
     this.setColor(this.service.stringToHsva(color));
     // this.triggerInstance.onChange();
-    this.emitClose("accept");
+    //this.emitClose("accept");
   }
 
   public onChangeColorPicker(event: Hsva) {
@@ -348,7 +348,7 @@ export class PanelComponent implements OnInit {
   setColor(value: Hsva) {
     this.hsva = value;
     this.color = this.service.toFormat(value, this.format);
-    this.setPreviewColor(value);
+    // this.setPreviewColor(value);
     this.triggerInstance.setColor(this.color);
   }
 
@@ -390,6 +390,11 @@ export class PanelComponent implements OnInit {
       if (status == "cancel") {
       } else if (status == "accept") {
         this.setColor(this.temporalColor);
+      }
+    }
+    if (this.menu === 2) {
+      if (status === 'cancel') {
+        this.setColor(this.service.stringToHsva(this.previewColor));
       }
     }
     this.triggerInstance.closePanel();
